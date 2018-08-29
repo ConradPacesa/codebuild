@@ -2,9 +2,10 @@ from github import Github
 import git
 import os
 
+token = os.environ['TOKEN']
 
-def lambda_handler(event, context):
-    g = Github("")
+def main():
+    g = Github(token)
     
     repo = g.get_repo("ConradPacesa/zip")
     
@@ -13,3 +14,6 @@ def lambda_handler(event, context):
     dir = os.listdir("./repos")
     
     print(dir)
+
+if __name__ == "__main__":
+    main()
