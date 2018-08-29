@@ -9,9 +9,9 @@ def main():
     
     repo = g.get_repo("ConradPacesa/zip")
     
-    git.Git('./repos').clone(repo.ssh_url)
+    git.Git('./').clone(repo.ssh_url)
     
-    dir = os.listdir("./repos")
+    dir = os.listdir("./")
     
     print(dir)
 
